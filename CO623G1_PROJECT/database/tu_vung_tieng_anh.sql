@@ -7,7 +7,8 @@ ten_nguoi_dung VARCHAR(45) NOT NULL,
 email VARCHAR(45) NOT NULL,
 ngay_sinh DATE NOT NULL,
 ten_dang_nhap VARCHAR(45) NOT NULL,
-mat_khau VARCHAR(45) NOT NULL
+mat_khau VARCHAR(45) NOT NULL,
+quyen VARCHAR(50) NOT NULL
 );
 
 CREATE TABLE do_kho (
@@ -27,22 +28,26 @@ dap_an_dung VARCHAR(30) NOT NULL,
 FOREIGN KEY(ma_do_kho) REFERENCES do_kho(ma_do_kho)
 );
 
+CREATE TABLE lich_su(
+ma_lich_su INT PRIMARY KEY AUTO_INCREMENT,
+ma_nguoi_dung INT NOT NULL,
+tong_diem INT NOT NULL,
+ngay_gio DATE NOT NULL,
+FOREIGN KEY(ma_nguoi_dung) REFERENCES nguoi_dung(ma_nguoi_dung)
+);
+
+
 CREATE TABLE ket_qua (
 ma_ket_qua INT PRIMARY KEY AUTO_INCREMENT,
 ma_cau_hoi INT NOT NULL,
+ma_lich_su INT NOT NULL,
 dap_an_dung VARCHAR(30) NOT NULL,
 dap_an_chon VARCHAR(30) NOT NULL,	
-FOREIGN KEY(ma_cau_hoi) REFERENCES cau_hoi(ma_cau_hoi)
+FOREIGN KEY(ma_cau_hoi) REFERENCES cau_hoi(ma_cau_hoi),
+FOREIGN KEY(ma_lich_su) REFERENCES lich_su(ma_lich_su)
 );
 
 
-CREATE TABLE lich_su(
-ma_lich_su INT NOT NULL,
-ma_ket_qua INT NOT NULL,
-ma_nguoi_dung INT NOT NULL,
-FOREIGN KEY(ma_nguoi_dung) REFERENCES nguoi_dung(ma_nguoi_dung),
-FOREIGN KEY(ma_ket_qua) REFERENCES ket_qua(ma_ket_qua)
-);
 
 INSERT INTO do_kho (ten_do_kho)
 VALUES ('dễ'),('trung bình'),('khó');
