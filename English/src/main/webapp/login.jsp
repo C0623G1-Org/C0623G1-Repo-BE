@@ -31,8 +31,7 @@
     <div class="inputBox">
         <input type="submit" value="Đăng nhập">
     </div>
-    <p><a href="#">Quên mật khẩu?</a></p>
-    <p style="margin-top: 10px"><a href="index.jsp">Trang chủ</a></p>
+    <p><a href="#" style="padding-bottom: 20px">Quên mật khẩu?</a></p>
 </form>
 </body>
 </html>
