@@ -1,6 +1,6 @@
-package com.example.case_sudy.service;
+package com.example.english.service;
 
-import com.example.case_sudy.model.KetQua;
+import com.example.english.model.KetQua;
 
 import java.util.List;
 

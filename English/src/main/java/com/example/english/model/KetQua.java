@@ -1,4 +1,4 @@
-package com.example.case_sudy.model;
+package com.example.english.model;
 
 public class KetQua {
     private String tenCauHoi;

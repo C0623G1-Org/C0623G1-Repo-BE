@@ -1,6 +1,6 @@
-package com.example.case_sudy.repository;
+package com.example.english.repository;
 
-import com.example.case_sudy.model.KetQua;
+import com.example.english.model.KetQua;
 
 import java.util.List;
 

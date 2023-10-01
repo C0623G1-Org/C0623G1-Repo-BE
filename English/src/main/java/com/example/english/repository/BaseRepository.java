@@ -1,4 +1,4 @@
-package com.example.case_sudy.repository;
+package com.example.english.repository;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
