@@ -1,13 +1,14 @@
-package com.example.case_sudy.controller;
+package com.example.english.controller;
 
-import com.example.case_sudy.model.KetQua;
-import com.example.case_sudy.repository.IKetQuaRepository;
-import com.example.case_sudy.service.IKetQuaService;
-import com.example.case_sudy.service.KetQuaService;
+import com.example.english.model.KetQua;
+import com.example.english.service.IKetQuaService;
+import com.example.english.service.KetQuaService;
 
 import javax.servlet.*;
-import javax.servlet.http.*;
 import javax.servlet.annotation.*;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
