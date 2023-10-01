@@ -1,4 +1,4 @@
-package com.example.english;
+package com.example.english.controller;
 
 import java.io.*;
 import javax.servlet.http.*;
