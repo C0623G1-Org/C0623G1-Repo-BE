@@ -7,10 +7,25 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-  <head>
-    <title>$Title$</title>
-  </head>
-  <body>
-  $END$
-  </body>
+<head>
+    <title>Đề Thi</title>
+</head>
+<body>
+<form action="/ket-qua" method="post">
+    <table>
+        <thead>
+        <tr>
+            <td>Đề Thi Dễ</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td></td>
+            <td></td>
+        </tr>
+        </tbody>
+    </table>
+</form>
+
+</body>
 </html>
