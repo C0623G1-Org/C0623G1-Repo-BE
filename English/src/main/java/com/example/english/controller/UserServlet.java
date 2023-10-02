@@ -18,6 +18,10 @@ public class UserServlet extends HttpServlet {
             action = "";
         }
         switch (action) {
+            case "login":
+                break;
+            case "signup":
+                break;
             default:
                 homePage(request, response);
                 break;
