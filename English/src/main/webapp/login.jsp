@@ -19,10 +19,10 @@
 <form action="#" method="post">
     <h2>ĐĂNG NHẬP</h2>
     <div class="inputBox">
-        <input type="text" placeholder="Username" required>
+        <input type="text" placeholder="Username" value="${name}" required>
     </div>
     <div class="inputBox">
-        <input type="password" placeholder="Password" required>
+        <input type="password" placeholder="Password" value="${password}" required>
     </div>
     <div class="checkbox">
         <input type="checkbox" value="Ghi nhớ mật khẩu?">

@@ -1,11 +1,11 @@
-CREATE DATABASE case_study;
-USE case_study;
+-- CREATE DATABASE case_study;
+-- USE case_study;
 
 CREATE TABLE nguoi_dung(
 ma_nguoi_dung INT PRIMARY KEY AUTO_INCREMENT,
-ten_nguoi_dung VARCHAR(45) NOT NULL,
-email VARCHAR(45) NOT NULL,
-ngay_sinh DATE NOT NULL,
+ten_nguoi_dung VARCHAR(45),
+email VARCHAR(45),
+ngay_sinh DATE,
 ten_dang_nhap VARCHAR(45) NOT NULL,
 mat_khau VARCHAR(45) NOT NULL
 );
