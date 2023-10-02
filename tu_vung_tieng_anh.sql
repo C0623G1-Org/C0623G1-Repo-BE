@@ -126,18 +126,6 @@ VALUES (1,'Who are all ________ people?','this','those','them','that','those'),
  (3, "This library card will give you free access____the Internet eight hours a day","on","to","from","in","to"),
  (3, "She had to hand in her notice____advance when she decided to leave the job","with","from","in","to","in"),
  (3, "Young people have become increasingly commited____social activities","of","to","in","at","to");
- 
- UPDATE ket_qua kq
-SET kq.diem =1
-where dap_an_dung = dap_an_chon;
-SELECT 
-ch.ten_cau_hoi,
-kq.dap_an_chon,
-kq.dap_an_dung,
-kq.diem
-FROM ket_qua kq
-JOIN cau_hoi ch ON kq.ma_cau_hoi=ch.ma_cau_hoi
-WHERE kq.ma_lich_su=1;
 
 
  
