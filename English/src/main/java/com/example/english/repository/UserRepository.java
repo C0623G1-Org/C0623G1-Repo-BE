@@ -11,7 +11,7 @@ public class UserRepository implements IUserRepository {
     private static final String SQL_USERNAME = "root";
     private static final String SQL_PASSWORD = "123456";
     private static final String SQL_URL = "jdbc:mysql://localhost:3306/?user=root";
-    private static final String SIGNUP_SQL = "INSERT INTO nguoi_dung(ten_nguoi_dung, email, ngay_sinh, ten_dang_nhap, mat_khau) VALUES (?, ?, ?, ?, ?);";
+    private static final String SIGNUP_SQL = "INSERT INTO case_study.nguoi_dung(ten_nguoi_dung, email, ngay_sinh, ten_dang_nhap, mat_khau) VALUES (?, ?, ?, ?, ?);";
 
     public UserRepository() {
     }

@@ -1,5 +1,9 @@
 package com.example.english.controller;
 
+import com.example.english.model.User;
+import com.example.english.service.IUserService;
+import com.example.english.service.UserServiceImpl;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -10,6 +14,7 @@ import java.io.IOException;
 
 @WebServlet(name = "UserServlet", value = "")
 public class UserServlet extends HttpServlet {
+    private final IUserService userService = new UserServiceImpl();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -18,10 +23,6 @@ public class UserServlet extends HttpServlet {
             action = "";
         }
         switch (action) {
-            case "login":
-                break;
-            case "signup":
-                break;
             default:
                 homePage(request, response);
                 break;
@@ -30,7 +31,37 @@ public class UserServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String action = request.getParameter("action");
+        if (action == null) {
+            action = "";
+        }
+        switch (action) {
+            case "login":
+                break;
+            case "signup":
+                signup(request, response);
+                break;
+        }
+    }
 
+    private void signup(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String name = request.getParameter("name");
+        String email = request.getParameter("email");
+        String password = request.getParameter("pswd");
+        String confirm = request.getParameter("cfrm pswd");
+        String error = "Xác nhận mật khẩu không chính xác";
+        if (password.equals(confirm)) {
+            User user = new User(name, email, password);
+            userService.signup(user);
+            request.setAttribute("name", name);
+            request.setAttribute("password", password);
+            RequestDispatcher requestDispatcher = request.getRequestDispatcher("/login.jsp");
+            requestDispatcher.forward(request, response);
+        } else {
+            request.setAttribute("error", error);
+            RequestDispatcher requestDispatcher = request.getRequestDispatcher("/reg.jsp");
+            requestDispatcher.forward(request, response);
+        }
     }
 
     private void homePage(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
