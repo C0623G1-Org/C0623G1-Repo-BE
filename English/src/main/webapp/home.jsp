@@ -8,7 +8,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Bootstrap demo</title>
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="homePage.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 </head>
@@ -37,7 +37,7 @@
                        aria-expanded="false">
                         Luyện đề
                     </a>
-                    <ul class="dropdown-menu">
+                    <ul class="dropdown-menu" style="padding-right: 40px;">
                         <li><a class="dropdown-item" href="#" style="color: #000000;">Làm đề dễ</a></li>
                         <li><a class="dropdown-item" href="#" style="color: #000000;">Làm đề trung bình</a></li>
                         <li><a class="dropdown-item" href="#" style="color: #000000;">Làm đề khó</a></li>
