@@ -18,6 +18,10 @@ public class UserServlet extends HttpServlet {
             action = "";
         }
         switch (action) {
+            case "login":
+                break;
+            case "signup":
+                break;
             default:
                 homePage(request, response);
                 break;
@@ -30,7 +34,7 @@ public class UserServlet extends HttpServlet {
     }
 
     private void homePage(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/home.jsp");
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/homePage.jsp");
         requestDispatcher.forward(request, response);
     }
 }
