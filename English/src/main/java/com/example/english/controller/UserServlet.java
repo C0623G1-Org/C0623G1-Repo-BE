@@ -37,11 +37,16 @@ public class UserServlet extends HttpServlet {
         }
         switch (action) {
             case "login":
+                login(request, response);
                 break;
             case "signup":
                 signup(request, response);
                 break;
         }
+    }
+
+    private void login(HttpServletRequest request, HttpServletResponse response) {
+
     }
 
     private void signup(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

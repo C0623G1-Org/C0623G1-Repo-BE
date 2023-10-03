@@ -16,13 +16,13 @@
 </head>
 
 <body>
-<form action="#" method="post">
+<form action="/?action=login" method="post">
     <h2>ĐĂNG NHẬP</h2>
     <div class="inputBox">
-        <input type="text" placeholder="Username" value="${name}" required>
+        <input type="text" name="loginId" placeholder="Username" value="${name}" required>
     </div>
     <div class="inputBox">
-        <input type="password" placeholder="Password" value="${password}" required>
+        <input type="password" name="password" placeholder="Password" value="${password}" required>
     </div>
     <div class="checkbox">
         <input type="checkbox" value="Ghi nhớ mật khẩu?">
