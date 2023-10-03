@@ -37,7 +37,7 @@ public class UserServlet extends HttpServlet {
         }
         switch (action) {
             case "login":
-                login(request, response);
+//                login(request, response);
                 break;
             case "signup":
                 signup(request, response);
@@ -45,9 +45,12 @@ public class UserServlet extends HttpServlet {
         }
     }
 
-    private void login(HttpServletRequest request, HttpServletResponse response) {
-
-    }
+//    private void login(HttpServletRequest request, HttpServletResponse response) {
+//        boolean loginStatus = userService.login(request.getParameter("loginId"), request.getParameter("password"));
+//        if (loginStatus) {
+//            RequestDispatcher requestDispatcher = request.getRequestDispatcher();
+//        }
+//    }
 
     private void signup(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String name = request.getParameter("name");
