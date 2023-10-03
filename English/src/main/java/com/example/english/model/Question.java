@@ -1,15 +1,15 @@
 package com.example.english.model;
 
 public class Question {
-    //    ma_cau_hoi INT PRIMARY KEY AUTO_INCREMENT,
-//    ma_do_kho INT NOT NULL,
-//    ten_cau_hoi VARCHAR(255) NOT NULL,
-//    dap_an_a VARCHAR(30) NOT NULL,
-//    dap_an_b VARCHAR(30) NOT NULL,
-//    dap_an_c VARCHAR(30) NOT NULL,
-//    dap_an_d VARCHAR(30) NOT NULL,
-//    dap_an_dung VARCHAR(30) NOT NULL,
-//    FOREIGN KEY(ma_do_kho) REFERENCES do_kho(ma_do_kho)
+//    question_id INT PRIMARY KEY AUTO_INCREMENT,
+//    diff_id INT NOT NULL,
+//    question_content VARCHAR(255) NOT NULL,
+//    answer_a VARCHAR(100) NOT NULL,
+//    answer_b VARCHAR(100) NOT NULL,
+//    answer_c VARCHAR(100) NOT NULL,
+//    answer_d VARCHAR(100) NOT NULL,
+//    correct_answer VARCHAR(100) NOT NULL,
+//    FOREIGN KEY(diff_id) REFERENCES difficulty(diff_id)
     private int id;
     private int levelId;
     private String question;

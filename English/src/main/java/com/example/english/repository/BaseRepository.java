@@ -12,7 +12,7 @@ public class BaseRepository {
     public BaseRepository() {
     }
     public static Connection getConnection (){
-        Connection connection=null;
+        Connection connection = null;
         try {
             Class.forName("com.mysql.jdbc.Driver");
             connection = DriverManager.getConnection(JDBC_URL,USERNAME,PASSWORK);
