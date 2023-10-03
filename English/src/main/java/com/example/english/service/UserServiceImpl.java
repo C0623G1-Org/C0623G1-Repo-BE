@@ -13,7 +13,7 @@ public class UserServiceImpl implements IUserService {
 
     @Override
     public Boolean login(String loginId, String password) {
-
+        return userRepository.login(loginId, password);
     }
 
     @Override

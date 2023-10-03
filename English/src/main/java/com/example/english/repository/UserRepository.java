@@ -31,11 +31,11 @@ public class UserRepository implements IUserRepository {
     public void signup(User user) {
         try (Connection connection = getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(SIGNUP_SQL)) {
-            preparedStatement.setString(1,user.getUserName());
-            preparedStatement.setString(2,user.getEmail());
-            preparedStatement.setString(3,user.getDob());
-            preparedStatement.setString(4,user.getLoginId());
-            preparedStatement.setString(5,user.getPassword());
+            preparedStatement.setString(1, user.getUserName());
+            preparedStatement.setString(2, user.getEmail());
+            preparedStatement.setString(3, user.getDob());
+            preparedStatement.setString(4, user.getLoginId());
+            preparedStatement.setString(5, user.getPassword());
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -43,8 +43,8 @@ public class UserRepository implements IUserRepository {
     }
 
     @Override
-    public void login(String loginId, String password) {
-
+    public boolean login(String loginId, String password) {
+        return false;
     }
 
     @Override
