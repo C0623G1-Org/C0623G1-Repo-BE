@@ -12,7 +12,7 @@ public class UserServiceImpl implements IUserService {
     }
 
     @Override
-    public void login(String loginId, String password) {
+    public Boolean login(String loginId, String password) {
 
     }
 

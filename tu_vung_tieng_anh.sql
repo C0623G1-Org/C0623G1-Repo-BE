@@ -1,51 +1,51 @@
--- CREATE DATABASE case_study;
--- USE case_study;
+CREATE DATABASE case_study;
+USE case_study;
 
-CREATE TABLE nguoi_dung(
-ma_nguoi_dung INT PRIMARY KEY AUTO_INCREMENT,
-ten_nguoi_dung VARCHAR(45),
+CREATE TABLE users(
+user_id INT PRIMARY KEY AUTO_INCREMENT,
+user_name VARCHAR(45),
 email VARCHAR(45),
-ngay_sinh DATE,
-ten_dang_nhap VARCHAR(45) NOT NULL,
-mat_khau VARCHAR(45) NOT NULL
+dob DATE,
+login_id VARCHAR(45) NOT NULL,
+login_password VARCHAR(45) NOT NULL
 );
 
-CREATE TABLE do_kho (
-ma_do_kho INT PRIMARY KEY AUTO_INCREMENT,
-ten_do_kho VARCHAR(10) NOT NULL
+CREATE TABLE difficulty (
+diff_id INT PRIMARY KEY AUTO_INCREMENT,
+diff_name VARCHAR(10) NOT NULL
 );
 
-CREATE TABLE cau_hoi (
-ma_cau_hoi INT PRIMARY KEY AUTO_INCREMENT,
-ma_do_kho INT NOT NULL,
-ten_cau_hoi VARCHAR(255) NOT NULL,
-dap_an_a VARCHAR(30) NOT NULL,
-dap_an_b VARCHAR(30) NOT NULL,
-dap_an_c VARCHAR(30) NOT NULL,
-dap_an_d VARCHAR(30) NOT NULL,
-dap_an_dung VARCHAR(30) NOT NULL,
-FOREIGN KEY(ma_do_kho) REFERENCES do_kho(ma_do_kho)
+CREATE TABLE questions (
+question_id INT PRIMARY KEY AUTO_INCREMENT,
+diff_id INT NOT NULL,
+question_content VARCHAR(255) NOT NULL,
+answer_a VARCHAR(100) NOT NULL,
+answer_b VARCHAR(100) NOT NULL,
+answer_c VARCHAR(100) NOT NULL,
+answer_d VARCHAR(100) NOT NULL,
+correct_answer VARCHAR(100) NOT NULL,
+FOREIGN KEY(diff_id) REFERENCES difficulty(diff_id)
 );
 
-CREATE TABLE lich_su(
-ma_lich_su INT PRIMARY KEY AUTO_INCREMENT,
-ma_nguoi_dung INT NOT NULL,
-tong_diem INT NOT NULL,
-FOREIGN KEY(ma_nguoi_dung) REFERENCES nguoi_dung(ma_nguoi_dung)
+CREATE TABLE test_history(
+history_id INT PRIMARY KEY AUTO_INCREMENT,
+user_id INT NOT NULL,
+total_score INT NOT NULL,
+FOREIGN KEY(user_id) REFERENCES users(user_id)
 );
-CREATE TABLE ket_qua (
-ma_cau_hoi INT NOT NULL,
-ma_lich_su INT NOT NULL,
-dap_an_chon VARCHAR(30) NOT NULL,
-diem INT NOT NULL,	
-FOREIGN KEY(ma_cau_hoi) REFERENCES cau_hoi(ma_cau_hoi),
-FOREIGN KEY(ma_lich_su) REFERENCES lich_su(ma_lich_su)
+CREATE TABLE results (
+question_id INT NOT NULL,
+history_id INT NOT NULL,
+choosen_answer VARCHAR(30) NOT NULL,
+score INT NOT NULL,	
+FOREIGN KEY(question_id) REFERENCES questions(question_id),
+FOREIGN KEY(history_id) REFERENCES test_history(history_id)
 );
 
-INSERT INTO do_kho (ten_do_kho)
+INSERT INTO difficulty (diff_name)
 VALUES ('dễ'),('trung bình'),('khó');
 
-INSERT INTO cau_hoi ( ma_do_kho ,ten_cau_hoi ,dap_an_a ,dap_an_b ,dap_an_c,dap_an_d ,dap_an_dung)
+INSERT INTO questions ( diff_id ,question_content ,answer_a ,answer_b ,answer_c,answer_d ,correct_answer)
 VALUES (1,'Who are all ________ people?','this','those','them','that','those'),
  (1,'Claude is ________.','Frenchman','a French','a Frenchman',' French man','a French'),
  (1,'I ____ a car next year.','buy','am buying','going to buy','bought','am buying'),
