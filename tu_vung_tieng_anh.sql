@@ -1,5 +1,5 @@
-CREATE DATABASE case_study;
-USE case_study;
+-- CREATE DATABASE case_study;
+-- USE case_study;
 
 CREATE TABLE users(
 user_id INT PRIMARY KEY AUTO_INCREMENT,
